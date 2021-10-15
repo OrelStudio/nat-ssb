@@ -1,0 +1,14 @@
+{
+  "name": "nat-ssb",
+  "version": "1.0.0",
+  "description": "blocks nat-slipstreaming",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "author": "Orel Shriki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
