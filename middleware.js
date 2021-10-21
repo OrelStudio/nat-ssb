@@ -29,19 +29,13 @@ const natSSB = (options = {message: 'Access Denied'}, callback, exceptions = [])
     const canAccess = isInternal(ip) || exceptions.includes(ip)
 
     if(canAccess) {
-      // callbacks for success
-      if(callback) {
-        callback()
-      }
-
       next()
     } else {
-      // callbacks for fail
-      if(callback) {
-        callback()
-      }
-
       res.status(401).send(options)
+    }
+
+    if(callback) {
+      callback(ip)
     }
   }
 }
