@@ -2,13 +2,30 @@
   "name": "nat-ssb",
   "version": "1.0.0",
   "description": "blocks nat-slipstreaming",
-  "main": "index.js",
+  "main": "middleware.js",
+  "bin": "middleware.js",
   "scripts": {
     "test": "jest"
   },
+  "keywords": [
+    "middleware",
+    "express",
+    "nat"
+  ],
   "author": "Orel Shriki",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrelStudio/nat-ssb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OrelStudio/nat-ssb/issues"
+  },
+  "homepage": "https://github.com/OrelStudio/nat-ssb#readme"
 }
