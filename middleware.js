@@ -10,6 +10,14 @@
  * @returns {Boolean} - if the ip is internal
  */
 const isInternal = (ip) => {
+  // equivalent of the IPv4 address 127.0.0.1
+  if(ip === '::1') {
+    return true
+  }
+  // if it doesn't exist, it's an IPv6 address
+  if (ip.substr(0, 7) === '::ffff:') {
+    ip = ip.substr(7)
+  }
   const parts = ip.split('.')
   return (parts[0] === '10' ||
     (parts[0] === '172' && (parseInt(parts[1], 10) >= 16 && parseInt(parts[1], 10) <= 31)) ||
@@ -39,7 +47,6 @@ const natSSB = (options = {message: 'Access Denied'}, callback, exceptions = [])
     }
   }
 }
-
 
 module.exports = {
   natSSB,
